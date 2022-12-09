@@ -39,6 +39,10 @@ public class Even {
 
         }
 
+        if (countCorrectAnswers ==3) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
+
     }
 
 }
