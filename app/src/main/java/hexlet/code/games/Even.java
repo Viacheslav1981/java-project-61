@@ -1,6 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
 
-import java.util.Random;
+import hexlet.code.Cli;
 import java.util.Scanner;
 
 public class Even {
@@ -32,7 +32,7 @@ public class Even {
                 System.out.println("Correct!");
                 countCorrectAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
