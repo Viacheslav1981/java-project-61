@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calculator;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -16,8 +13,8 @@ public class Engine {
         System.out.println("3 - Calc");
         System.out.println("4 - GDC");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-
 
     Scanner scanner = new Scanner(System.in);
     int choice = scanner.nextInt();
@@ -41,6 +38,10 @@ public class Engine {
             case 5:
                 System.out.println("Your choice: " + choice);
                 Progression.guessProgression();
+                break;
+            case 6:
+                System.out.println("Your choice: " + choice);
+                Prime.guessPrime();
                 break;
             case 0:
             break;
