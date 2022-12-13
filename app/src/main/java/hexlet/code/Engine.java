@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class Engine {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GDC");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
 
 
@@ -36,7 +38,10 @@ public class Engine {
                 System.out.println("Your choice: " + choice);
                 Gcd.greatDivisor();
                 break;
-
+            case 5:
+                System.out.println("Your choice: " + choice);
+                Progression.guessProgression();
+                break;
             case 0:
             break;
     }

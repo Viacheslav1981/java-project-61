@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+
 import java.util.Scanner;
 
 public class Even {
@@ -39,7 +40,7 @@ public class Even {
 
         }
 
-        if (countCorrectAnswers ==3) {
+        if (countCorrectAnswers == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
 

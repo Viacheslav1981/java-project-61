@@ -21,7 +21,7 @@ public class Calculator {
             randomNumber1 = (int) (Math.random() * 10);
             randomNumber2 = (int) (Math.random() * 10);
 
-            String [] operationsArray = new String[3];
+            String[] operationsArray = new String[3];
             operationsArray[0] = "+";
             operationsArray[1] = "-";
             operationsArray[2] = "*";
@@ -45,21 +45,21 @@ public class Calculator {
                     correctAnswer = randomNumber1 * randomNumber2;
                     break;
             }
-                   if (correctAnswer == answer) {
-                       System.out.println("Correct!");
-                       countCorrectAnswers ++;
-                   } else {
-                       System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
-                       System.out.println("Let's try again, " + userName + "!");
-                       break;
-                   }
+            if (correctAnswer == answer) {
+                System.out.println("Correct!");
+                countCorrectAnswers++;
+            } else {
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                break;
+            }
 
-           }
-        if (countCorrectAnswers ==3) {
+        }
+        if (countCorrectAnswers == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
 
-        }
+    }
 
 }
 

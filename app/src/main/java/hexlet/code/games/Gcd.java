@@ -12,7 +12,7 @@ public class Gcd {
         int randomNumber1 = 0;
         int randomNumber2 = 0;
 
-        int divisors= 0;
+        int divisors = 0;
         int maxCommonDivisor = 0;
 
         int countCorrectAnswers = 0;
@@ -23,7 +23,7 @@ public class Gcd {
             randomNumber1 = (int) (Math.random() * 100);
             randomNumber2 = (int) (Math.random() * 100);
 
-            System.out.println("Question: " + randomNumber1 +  " " + randomNumber2);
+            System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
 
             if (randomNumber1 > randomNumber2) {
                 divisors = randomNumber2;
@@ -49,8 +49,8 @@ public class Gcd {
                 break;
             }
         }
-        
-        if (countCorrectAnswers ==3) {
+
+        if (countCorrectAnswers == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
