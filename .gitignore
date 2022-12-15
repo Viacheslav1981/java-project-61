@@ -5,6 +5,7 @@
 build
 
 **/logs/
+.DS_Store
 
 .settings
 bin
