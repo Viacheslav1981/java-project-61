@@ -21,7 +21,7 @@ public class Engine {
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+        final int choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
