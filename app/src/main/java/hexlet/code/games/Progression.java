@@ -53,7 +53,8 @@ public class Progression {
                 System.out.println("Correct!");
                 countCorrectAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + progression[guessNumber] + "'.");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + progression[guessNumber] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }

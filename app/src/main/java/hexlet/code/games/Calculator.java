@@ -44,12 +44,17 @@ public class Calculator {
                 case "*":
                     correctAnswer = randomNumber1 * randomNumber2;
                     break;
+                default:
+                case "":
+                    break;
+
             }
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
                 countCorrectAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }

@@ -33,7 +33,8 @@ public class Even {
                 System.out.println("Correct!");
                 countCorrectAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }

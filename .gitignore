@@ -6,7 +6,7 @@ build
 
 **/logs/
 .DS_Store
-
+out
 .settings
 bin
 .project*
