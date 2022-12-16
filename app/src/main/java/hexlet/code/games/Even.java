@@ -11,13 +11,17 @@ public class Even {
         int randomNumber = 0;
         int countCorrectAnswers = 0;
         boolean isEven;
+
         String correctAnswer = "";
         String userName = Cli.meeting();
 
+        final int numberOfNeedAnswers = 3;
+        final int roundNumber = 1000;
+
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        while (countCorrectAnswers < 3) {
-            randomNumber = (int) (Math.random() * 1000);
+        while (countCorrectAnswers < numberOfNeedAnswers) {
+            randomNumber = (int) (Math.random() * roundNumber);
             if (randomNumber % 2 == 0) {
                 isEven = true;
                 correctAnswer = "yes";
@@ -41,7 +45,7 @@ public class Even {
 
         }
 
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == numberOfNeedAnswers) {
             System.out.println("Congratulations, " + userName + "!");
         }
 

@@ -15,16 +15,24 @@ public class Progression {
         int lengthProgression = 0;
         int countCorrectAnswers = 0;
 
+        final int numberOfNeedAnswers = 3;
+        final int roundNumber1 = 10;
+        final int roundNumber2 = 100;
+        final int progressionRange1 = 5;
+        final int progressionRange2 = 11;
+
+        final int progressionStepRange = 20;
+
         System.out.println("What number is missing in the progression?");
 
-        while (countCorrectAnswers < 3) {
+        while (countCorrectAnswers < numberOfNeedAnswers) {
 
-            lengthProgression = new Random().nextInt(5, 11);
-            startProgression = (int) (Math.random() * 10);
+            lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
+            startProgression = (int) (Math.random() * roundNumber1);
 
             int[] progression = new int[lengthProgression];
-            startProgression = (int) (Math.random() * 100);
-            stepProgression = new Random().nextInt(1, 20);
+            startProgression = (int) (Math.random() * roundNumber2);
+            stepProgression = new Random().nextInt(1, progressionStepRange);
 
             for (int i = 0; i < lengthProgression; i++) {
                 if (i == 0) {
@@ -60,7 +68,7 @@ public class Progression {
             }
         }
 
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == numberOfNeedAnswers) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

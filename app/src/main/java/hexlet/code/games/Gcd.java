@@ -17,11 +17,14 @@ public class Gcd {
 
         int countCorrectAnswers = 0;
 
+        final int numberOfNeedAnswers = 3;
+        final int roundNumber = 100;
+
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        while (countCorrectAnswers < 3) {
-            randomNumber1 = (int) (Math.random() * 100);
-            randomNumber2 = (int) (Math.random() * 100);
+        while (countCorrectAnswers < numberOfNeedAnswers) {
+            randomNumber1 = (int) (Math.random() * roundNumber);
+            randomNumber2 = (int) (Math.random() * roundNumber);
 
             System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
 
@@ -51,7 +54,7 @@ public class Gcd {
             }
         }
 
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == numberOfNeedAnswers) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

@@ -12,12 +12,14 @@ public class Prime {
         int countCorrectAnswers = 0;
         String correctAnswer = "";
 
+        final int numberOfNeedAnswers = 3;
+        final int roundNumber = 100;
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         boolean isPrime = false;
 
-        while (countCorrectAnswers < 3) {
-            int guessNumber = new Random().nextInt(2, 100);
+        while (countCorrectAnswers < numberOfNeedAnswers) {
+            int guessNumber = new Random().nextInt(2, roundNumber);
 
             System.out.println("Question: " + guessNumber);
             String answer = scanner.next();
@@ -49,7 +51,7 @@ public class Prime {
 
         }
 
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == numberOfNeedAnswers) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
