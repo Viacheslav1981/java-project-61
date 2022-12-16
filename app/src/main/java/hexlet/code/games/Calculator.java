@@ -13,8 +13,10 @@ public class Calculator {
         int randomNumber1 = 0;
         int randomNumber2 = 0;
         int countCorrectAnswers = 0;
+
         int numberOfNeedAnswers = 3;
         int roundNumber = 10;
+        int numberOfOperations = 3;
 
         System.out.println("What is the result of the expression?");
 
@@ -23,7 +25,7 @@ public class Calculator {
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
 
-            String[] operationsArray = new String[3];
+            String[] operationsArray = new String[numberOfOperations];
             operationsArray[0] = "+";
             operationsArray[1] = "-";
             operationsArray[2] = "*";
