@@ -13,13 +13,15 @@ public class Calculator {
         int randomNumber1 = 0;
         int randomNumber2 = 0;
         int countCorrectAnswers = 0;
+        int numberOfNeedAnswers = 3;
+        int roundNumber = 10;
 
         System.out.println("What is the result of the expression?");
 
-        while (countCorrectAnswers < 3) {
+        while (countCorrectAnswers < numberOfNeedAnswers) {
 
-            randomNumber1 = (int) (Math.random() * 10);
-            randomNumber2 = (int) (Math.random() * 10);
+            randomNumber1 = (int) (Math.random() * roundNumber);
+            randomNumber2 = (int) (Math.random() * roundNumber);
 
             String[] operationsArray = new String[3];
             operationsArray[0] = "+";
@@ -60,7 +62,7 @@ public class Calculator {
             }
 
         }
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == numberOfNeedAnswers) {
             System.out.println("Congratulations, " + userName + "!");
         }
 
