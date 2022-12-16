@@ -10,13 +10,14 @@ public class Calculator {
     public static void calculate() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.meeting();
+
         int randomNumber1 = 0;
         int randomNumber2 = 0;
         int countCorrectAnswers = 0;
 
-        int numberOfNeedAnswers = 3;
-        int roundNumber = 10;
-        int numberOfOperations = 3;
+        final int numberOfNeedAnswers = 3;
+        final int roundNumber = 10;
+        final int numberOfOperations = 3;
 
         System.out.println("What is the result of the expression?");
 
