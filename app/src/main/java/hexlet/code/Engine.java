@@ -21,29 +21,36 @@ public class Engine {
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
-        final int choice = scanner.nextInt();
+        int choice = scanner.nextInt();
+
+        final int greet  = 1;
+        final int even = 2;
+        final int calc = 3;
+        final int gdc = 4;
+        final int progression = 5;
+        final int prime = 6;
 
         switch (choice) {
-            case 1:
+            case greet:
                 Cli.meeting();
                 break;
-            case 2:
+            case even:
                 System.out.println("Your choice: " + choice);
                 Even.tryToGuess();
                 break;
-            case 3:
+            case calc:
                 System.out.println("Your choice: " + choice);
                 Calculator.calculate();
                 break;
-            case 4:
+            case gdc:
                 System.out.println("Your choice: " + choice);
                 Gcd.greatDivisor();
                 break;
-            case 5:
+            case progression:
                 System.out.println("Your choice: " + choice);
                 Progression.guessProgression();
                 break;
-            case 6:
+            case prime:
                 System.out.println("Your choice: " + choice);
                 Prime.guessPrime();
                 break;
