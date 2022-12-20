@@ -10,5 +10,5 @@ out
 bin
 .project*
 .classpath
-.idea/
+.idea
 .DS_Store
