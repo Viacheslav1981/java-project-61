@@ -5,10 +5,9 @@
 build
 
 **/logs/
-.DS_Store
 out
 .settings
 bin
 .project*
 .classpath
-.idea/
+.idea/.DS_Store
