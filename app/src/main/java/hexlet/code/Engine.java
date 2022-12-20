@@ -23,7 +23,7 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
 
-        final int greet  = 1;
+        final int greet = 1;
         final int even = 2;
         final int calc = 3;
         final int gdc = 4;
@@ -57,7 +57,6 @@ public class Engine {
             default:
             case 0:
                 break;
-
         }
     }
 }
