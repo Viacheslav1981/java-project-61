@@ -1,27 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
+import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Calculator {
 
     public static void calculate() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.meeting();
 
-        int randomNumber1 = 0;
-        int randomNumber2 = 0;
-        int countCorrectAnswers = 0;
+        int randomNumber1;
+        int randomNumber2;
 
-        final int numberOfNeedAnswers = 3;
+        int gameRounds = 0;
+        boolean isOver;
+
+        final int numberOfNeedRounds = 3;
         final int roundNumber = 10;
         final int numberOfOperations = 3;
 
-        System.out.println("What is the result of the expression?");
+        String rules = "What is the result of the expression?";
+        Engine.helloAndRules(rules);
 
-        while (countCorrectAnswers < numberOfNeedAnswers) {
+
+        while (gameRounds < numberOfNeedRounds) {
+            gameRounds++;
 
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
@@ -33,40 +34,29 @@ public class Calculator {
 
             int rnd = new Random().nextInt(operationsArray.length);
 
-            System.out.println("Question: " + randomNumber1 + " " + operationsArray[rnd] + " " + randomNumber2);
-            int answer = scanner.nextInt();
-            System.out.println("Your answer: " + answer);
-
-            int correctAnswer = 0;
+            String correctAnswer = "";
 
             switch (operationsArray[rnd]) {
                 case "+":
-                    correctAnswer = randomNumber1 + randomNumber2;
+                    correctAnswer = String.valueOf(randomNumber1 + randomNumber2);
                     break;
                 case "-":
-                    correctAnswer = randomNumber1 - randomNumber2;
+                    correctAnswer = String.valueOf(randomNumber1 - randomNumber2);
                     break;
                 case "*":
-                    correctAnswer = randomNumber1 * randomNumber2;
+                    correctAnswer = String.valueOf(randomNumber1 * randomNumber2);
                     break;
                 default:
                 case "":
                     break;
-
             }
-            if (correctAnswer == answer) {
-                System.out.println("Correct!");
-                countCorrectAnswers++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+
+            String question = "Question: " + randomNumber1 + " " + operationsArray[rnd] + " " + randomNumber2;
+            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
+            if (isOver) {
                 break;
             }
 
-        }
-        if (countCorrectAnswers == numberOfNeedAnswers) {
-            System.out.println("Congratulations, " + userName + "!");
         }
 
     }

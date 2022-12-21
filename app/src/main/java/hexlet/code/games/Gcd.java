@@ -1,32 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Scanner;
-
+import hexlet.code.Engine;
 public class Gcd {
     public static void greatDivisor() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.meeting();
+        boolean isOver;
 
-        int randomNumber1 = 0;
-        int randomNumber2 = 0;
+        int randomNumber1;
+        int randomNumber2;
 
-        int divisors = 0;
-        int maxCommonDivisor = 0;
+        int divisors;
 
-        int countCorrectAnswers = 0;
+        int gameRounds = 0;
 
-        final int numberOfNeedAnswers = 3;
+        final int numberOfNeedRounds = 3;
         final int roundNumber = 100;
 
-        System.out.println("Find the greatest common divisor of given numbers.");
+        String correctAnswer = "";
+        String rules = "Find the greatest common divisor of given numbers.";
 
-        while (countCorrectAnswers < numberOfNeedAnswers) {
+        Engine.helloAndRules(rules);
+
+        while (gameRounds < numberOfNeedRounds) {
+            gameRounds++;
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
-
-            System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
 
             if (randomNumber1 > randomNumber2) {
                 divisors = randomNumber2;
@@ -36,26 +33,23 @@ public class Gcd {
 
             for (int i = 1; i <= divisors; i++) {
                 if ((randomNumber1 % i == 0) && (randomNumber2 % i == 0)) {
-                    maxCommonDivisor = i;
+                    correctAnswer = String.valueOf(i);
                 }
             }
 
-            int answer = scanner.nextInt();
-            System.out.println("Your answer: " + answer);
+            if (randomNumber1 == 0) {
+                correctAnswer = String.valueOf(randomNumber2);
+            }
 
-            if (answer == maxCommonDivisor) {
-                System.out.println("Correct!");
-                countCorrectAnswers++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + maxCommonDivisor + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+            if (randomNumber2 == 0) {
+                correctAnswer = String.valueOf(randomNumber1);
+            }
+
+            String question = "Question: " + randomNumber1 + " " + randomNumber2;
+            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
+            if (isOver) {
                 break;
             }
-        }
-
-        if (countCorrectAnswers == numberOfNeedAnswers) {
-            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }

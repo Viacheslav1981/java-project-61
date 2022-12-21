@@ -1,54 +1,34 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Even {
-
-    public static void tryToGuess() {
-        Scanner scanner = new Scanner(System.in);
-        int randomNumber = 0;
-        int countCorrectAnswers = 0;
-        boolean isEven;
-
-        String correctAnswer = "";
-        String userName = Cli.meeting();
-
-        final int numberOfNeedAnswers = 3;
+    public static void tryToGuessEven() {
+        int randomNumber;
+        boolean isOver;
+        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String correctAnswer;
         final int roundNumber = 1000;
+        final int numberOfNeedRounds = 3;
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Engine.helloAndRules(rules);
 
-        while (countCorrectAnswers < numberOfNeedAnswers) {
+        int gameRounds = 0;
+
+        while (gameRounds <= numberOfNeedRounds) {
+            gameRounds++;
             randomNumber = (int) (Math.random() * roundNumber);
             if (randomNumber % 2 == 0) {
-                isEven = true;
                 correctAnswer = "yes";
             } else {
-                isEven = false;
                 correctAnswer = "no";
             }
 
-            System.out.println("Question: " + randomNumber);
-            String answer = scanner.next();
-
-            if ((answer.equals("yes") && isEven) || (answer.equals("no") && !isEven)) {
-                System.out.println("Correct!");
-                countCorrectAnswers++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+            String question = "Question: " + randomNumber;
+            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
+            if (isOver) {
                 break;
             }
-
         }
-
-        if (countCorrectAnswers == numberOfNeedAnswers) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
-
     }
-
 }

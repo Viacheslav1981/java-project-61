@@ -1,28 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
     public static void guessPrime() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.meeting();
-        int countCorrectAnswers = 0;
+        boolean isOver;
+
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String correctAnswer = "";
 
-        final int numberOfNeedAnswers = 3;
+        final int numberOfNeedRounds = 3;
         final int roundNumber = 100;
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        boolean isPrime = false;
+        int gameRounds = 0;
 
-        while (countCorrectAnswers < numberOfNeedAnswers) {
+        Engine.helloAndRules(rules);
+
+        while (gameRounds <= numberOfNeedRounds) {
+            gameRounds++;
+
             int guessNumber = new Random().nextInt(2, roundNumber);
 
-            System.out.println("Question: " + guessNumber);
-            String answer = scanner.next();
             int countDivisors = 0;
 
             for (int i = 2; i < guessNumber; i++) {
@@ -32,27 +32,17 @@ public class Prime {
             }
 
             if (countDivisors == 0) {
-                isPrime = true;
                 correctAnswer = "yes";
             } else {
-                isPrime = false;
                 correctAnswer = "no";
             }
 
-            if ((answer.equals("yes") && isPrime) || (answer.equals("no") && !isPrime)) {
-                System.out.println("Correct!");
-                countCorrectAnswers++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+            String question = "Question: " + guessNumber;
+            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
+            if (isOver) {
                 break;
             }
-
         }
 
-        if (countCorrectAnswers == numberOfNeedAnswers) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
     }
 }

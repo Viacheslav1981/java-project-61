@@ -1,21 +1,20 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
+import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
     public static void guessProgression() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.meeting();
+        boolean isOver;
+        int gameRounds = 0;
+
+        String rules = "What number is missing in the progression?";
 
         int startProgression = 0;
         int stepProgression = 0;
         int lengthProgression = 0;
-        int countCorrectAnswers = 0;
 
-        final int numberOfNeedAnswers = 3;
+        final int numberOfNeedRounds = 3;
         final int roundNumber1 = 10;
         final int roundNumber2 = 100;
         final int progressionRange1 = 5;
@@ -23,9 +22,12 @@ public class Progression {
 
         final int progressionStepRange = 20;
 
-        System.out.println("What number is missing in the progression?");
+        String correctAnswer = "";
 
-        while (countCorrectAnswers < numberOfNeedAnswers) {
+        Engine.helloAndRules(rules);
+
+        while (gameRounds < numberOfNeedRounds) {
+            gameRounds++;
 
             lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
             startProgression = (int) (Math.random() * roundNumber1);
@@ -42,35 +44,26 @@ public class Progression {
                 }
             }
 
-            System.out.print("Question: ");
+            String question = "Question: ";
             int guessNumber = new Random().nextInt(0, progression.length);
             for (int i = 0; i < progression.length; i++) {
                 if (i == guessNumber) {
-                    System.out.print("..");
+                    question = question + " ..";
                 } else {
-                    System.out.print(progression[i]);
+                    question = question + progression[i];
                 }
-                System.out.print(" ");
+                question = question + " ";
             }
-            System.out.println();
 
-            int answer = scanner.nextInt();
-            System.out.println("Your answer: " + answer);
+            correctAnswer = String.valueOf(progression[guessNumber]);
 
-            if (answer == progression[guessNumber]) {
-                System.out.println("Correct!");
-                countCorrectAnswers++;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + progression[guessNumber] + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
+            if (isOver) {
                 break;
             }
+
         }
 
-        if (countCorrectAnswers == numberOfNeedAnswers) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
     }
 
 }
