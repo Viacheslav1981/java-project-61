@@ -22,7 +22,7 @@ public class Progression {
 
         final int progressionStepRange = 20;
 
-        String correctAnswer = "";
+        String correctAnswer;
 
         Engine.helloAndRules(rules);
 
@@ -48,7 +48,7 @@ public class Progression {
             int guessNumber = new Random().nextInt(0, progression.length);
             for (int i = 0; i < progression.length; i++) {
                 if (i == guessNumber) {
-                    question = question + " ..";
+                    question = question + "..";
                 } else {
                     question = question + progression[i];
                 }
