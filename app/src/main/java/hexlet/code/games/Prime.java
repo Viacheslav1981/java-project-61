@@ -24,19 +24,11 @@ public class Prime {
         final int columns = 2;
 
         int randomNumber;
+        final String forAnswer = "prime";
 
         String[][] questionsAndAnswers = new String[strings][columns];
 
-        for (int i = 0; i < questionsAndAnswers.length; i++) {
-            randomNumber = (int) (Math.random() * roundNumber);
-            String question = "Question: " + randomNumber;
-            questionsAndAnswers[i][0] = question;
-            if (isPrime(randomNumber)) {
-                questionsAndAnswers[i][1] = "yes";
-            } else {
-                questionsAndAnswers[i][1] = "no";
-            }
-        }
+        Engine.setYesOrNoAnswers(questionsAndAnswers, forAnswer);
         Engine.commonLogicForGames(rules, questionsAndAnswers);
     }
 }

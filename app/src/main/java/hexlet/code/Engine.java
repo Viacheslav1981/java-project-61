@@ -8,11 +8,7 @@ public class Engine {
 
     public static void commonLogicForGames(String rules, String[][] questionsAndAnswers) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println(rules);
+        helloAndRules(rules);
 
         int questionNumber = 0;
         final int numberOfNeedRounds = 3;
@@ -51,31 +47,38 @@ public class Engine {
         System.out.println(rules);
     }
 
-    public static boolean commonLogic(String question, String correctAnswer, int gameRounds) {
-        Scanner scanner = new Scanner(System.in);
-
-        final int numberOfNeedRounds = 3;
-        boolean isOver = false;
-        String userAnswer;
-
-        System.out.println(question);
-        userAnswer = scanner.next();
-        System.out.println("Your answer: " + userAnswer);
-
-        if (userAnswer.equals(correctAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + correctAnswer + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            isOver = true;
-        }
-
-        if (gameRounds == numberOfNeedRounds && !isOver) {
-            System.out.println("Congratulations, " + userName + "!");
-            isOver = true;
-        }
-        return isOver;
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
+
+    public static boolean isPrime(int randomNumber) {
+        int countDivisors = 0;
+
+        for (int i = 2; i < randomNumber; i++) {
+            if (randomNumber % i == 0) {
+                countDivisors++;
+            }
+        }
+        return (countDivisors == 0);
+    }
+
+    public static void setYesOrNoAnswers(String[][] questionsAndAnswers, String primeOrEven) {
+        int randomNumber;
+        final int roundNumber = 100;
+
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            randomNumber = (int) (Math.random() * roundNumber);
+            String question = "Question: " + randomNumber;
+            questionsAndAnswers[i][0] = question;
+
+            if ((primeOrEven.equals("even") && (Engine.isEven(randomNumber))) ||
+                    (primeOrEven.equals("prime") && (Engine.isPrime(randomNumber)))) {
+                questionsAndAnswers[i][1] = "yes";
+            } else {
+                questionsAndAnswers[i][1] = "no";
+            }
+        }
+    }
+
 }
 
