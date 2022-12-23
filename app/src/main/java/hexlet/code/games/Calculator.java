@@ -1,65 +1,65 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class Calculator {
+    public static char[] OPERATORS = {'+', '-', '*'};
 
-    public static void calculate() {
+    public static String calculateNumbers(int randomNumber1,
+                                          int randomNumber2,
+                                          char operator) {
+
+        String correctAnswer = "";
+
+        switch (operator) {
+            case '+':
+                correctAnswer = String.valueOf(randomNumber1 + randomNumber2);
+                break;
+            case '-':
+                correctAnswer = String.valueOf(randomNumber1 - randomNumber2);
+                break;
+            case '*':
+                correctAnswer = String.valueOf(randomNumber1 * randomNumber2);
+                break;
+            default:
+            case ' ':
+                break;
+        }
+        return correctAnswer;
+    }
+
+    public static void tryToCalculateNumbers() {
 
         int randomNumber1;
         int randomNumber2;
 
-        int gameRounds = 0;
-        boolean isOver;
-
-        final int numberOfNeedRounds = 3;
         final int roundNumber = 10;
-        final int numberOfOperations = 3;
+
+        final int strings = 3;
+        final int columns = 2;
 
         String rules = "What is the result of the expression?";
-        Engine.helloAndRules(rules);
+        String[][] questionsAndAnswers = new String[strings][columns];
 
-
-        while (gameRounds < numberOfNeedRounds) {
-            gameRounds++;
-
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
 
-            String[] operationsArray = new String[numberOfOperations];
-            operationsArray[0] = "+";
-            operationsArray[1] = "-";
-            operationsArray[2] = "*";
+            int numberOfOperation = new Random().nextInt(OPERATORS.length);
+            String question = "Question: " + randomNumber1 + " " + OPERATORS[numberOfOperation] +
+                    " " + randomNumber2;
 
-            int rnd = new Random().nextInt(operationsArray.length);
-
-            String correctAnswer = "";
-
-            switch (operationsArray[rnd]) {
-                case "+":
-                    correctAnswer = String.valueOf(randomNumber1 + randomNumber2);
-                    break;
-                case "-":
-                    correctAnswer = String.valueOf(randomNumber1 - randomNumber2);
-                    break;
-                case "*":
-                    correctAnswer = String.valueOf(randomNumber1 * randomNumber2);
-                    break;
-                default:
-                case "":
-                    break;
-            }
-
-            String question = "Question: " + randomNumber1 + " " + operationsArray[rnd] + " " + randomNumber2;
-            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
-            if (isOver) {
-                break;
-            }
+            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][1] = calculateNumbers(randomNumber1, randomNumber2, OPERATORS[numberOfOperation]);
 
         }
 
+        Engine.commonLogicForGames(rules, questionsAndAnswers);
     }
 
 }
+
+
 

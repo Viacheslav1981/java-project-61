@@ -2,47 +2,47 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Prime {
-    public static void guessPrime() {
-        boolean isOver;
 
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String correctAnswer = "";
+    public static boolean isPrime(int randomNumber) {
+        int countDivisors = 0;
 
-        final int numberOfNeedRounds = 3;
-        final int roundNumber = 100;
-
-        int gameRounds = 0;
-
-        Engine.helloAndRules(rules);
-
-        while (gameRounds <= numberOfNeedRounds) {
-            gameRounds++;
-
-            int guessNumber = new Random().nextInt(2, roundNumber);
-
-            int countDivisors = 0;
-
-            for (int i = 2; i < guessNumber; i++) {
-                if (guessNumber % i == 0) {
-                    countDivisors++;
-                }
-            }
-
-            if (countDivisors == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
-
-            String question = "Question: " + guessNumber;
-            isOver = Engine.commonLogic(question, correctAnswer, gameRounds);
-            if (isOver) {
-                break;
+        for (int i = 2; i < randomNumber; i++) {
+            if (randomNumber % i == 0) {
+                countDivisors++;
             }
         }
 
+        if (countDivisors == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void tryToGuessPrime() {
+
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+        final int roundNumber = 100;
+        final int strings = 3;
+        final int columns = 2;
+
+        int randomNumber;
+
+        String[][] questionsAndAnswers = new String[strings][columns];
+
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            randomNumber = (int) (Math.random() * roundNumber);
+            String question = "Question: " + randomNumber;
+            questionsAndAnswers[i][0] = question;
+            if (isPrime(randomNumber)) {
+                questionsAndAnswers[i][1] = "yes";
+            } else {
+                questionsAndAnswers[i][1] = "no";
+            }
+        }
+        Engine.commonLogicForGames(rules, questionsAndAnswers);
     }
 }
+

@@ -40,16 +40,16 @@ public class App {
                 Even.tryToGuessEven();
                 break;
             case calc:
-                Calculator.calculate();
+                Calculator.tryToCalculateNumbers();
                 break;
             case gcd:
-                Gcd.greatDivisor();
+                Gcd.tryToCalculateDivisor();
                 break;
             case progression:
-                Progression.guessProgression();
+                Progression.tryToGuessNumberFromProgression();
                 break;
             case prime:
-                Prime.guessPrime();
+                Prime.tryToGuessPrime();
                 break;
             default:
             case 0:
