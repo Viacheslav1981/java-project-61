@@ -5,7 +5,6 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calculator {
-    public static char[] OPERATORS = {'+', '-', '*'};
 
     public static String calculateNumbers(int randomNumber1,
                                           int randomNumber2,
@@ -40,6 +39,9 @@ public class Calculator {
         final int strings = 3;
         final int columns = 2;
 
+        char[] operators = {'+', '-', '*'};
+
+
         String rules = "What is the result of the expression?";
         String[][] questionsAndAnswers = new String[strings][columns];
 
@@ -47,12 +49,12 @@ public class Calculator {
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
 
-            int numberOfOperation = new Random().nextInt(OPERATORS.length);
-            String question = "Question: " + randomNumber1 + " " + OPERATORS[numberOfOperation] +
-                    " " + randomNumber2;
+            int numberOfOperation = new Random().nextInt(operators.length);
+            String question = "Question: " + randomNumber1 + " "
+                    + operators[numberOfOperation] + " " + randomNumber2;
 
             questionsAndAnswers[i][0] = question;
-            questionsAndAnswers[i][1] = calculateNumbers(randomNumber1, randomNumber2, OPERATORS[numberOfOperation]);
+            questionsAndAnswers[i][1] = calculateNumbers(randomNumber1, randomNumber2, operators[numberOfOperation]);
 
         }
 

@@ -13,11 +13,8 @@ public class Prime {
             }
         }
 
-        if (countDivisors == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (countDivisors == 0);
+        
     }
 
     public static void tryToGuessPrime() {
