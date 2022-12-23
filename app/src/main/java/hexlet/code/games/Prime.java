@@ -12,9 +12,7 @@ public class Prime {
                 countDivisors++;
             }
         }
-
         return (countDivisors == 0);
-        
     }
 
     public static void tryToGuessPrime() {
