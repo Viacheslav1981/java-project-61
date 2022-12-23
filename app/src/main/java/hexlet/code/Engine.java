@@ -71,8 +71,8 @@ public class Engine {
             String question = "Question: " + randomNumber;
             questionsAndAnswers[i][0] = question;
 
-            if ((primeOrEven.equals("even") && (Engine.isEven(randomNumber))) ||
-                    (primeOrEven.equals("prime") && (Engine.isPrime(randomNumber)))) {
+            if ((primeOrEven.equals("even") && (Engine.isEven(randomNumber)))
+                    || (primeOrEven.equals("prime") && (Engine.isPrime(randomNumber)))) {
                 questionsAndAnswers[i][1] = "yes";
             } else {
                 questionsAndAnswers[i][1] = "no";

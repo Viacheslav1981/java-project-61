@@ -4,17 +4,6 @@ import hexlet.code.Engine;
 
 public class Prime {
 
-    public static boolean isPrime(int randomNumber) {
-        int countDivisors = 0;
-
-        for (int i = 2; i < randomNumber; i++) {
-            if (randomNumber % i == 0) {
-                countDivisors++;
-            }
-        }
-        return (countDivisors == 0);
-    }
-
     public static void tryToGuessPrime() {
 
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
