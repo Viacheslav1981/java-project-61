@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class Prime {
 
-    public static void tryToGuessPrime() {
+    public static void calculatePrime() {
 
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 

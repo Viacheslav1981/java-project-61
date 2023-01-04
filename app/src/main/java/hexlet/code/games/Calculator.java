@@ -29,7 +29,7 @@ public class Calculator {
         return correctAnswer;
     }
 
-    public static void tryToCalculateNumbers() {
+    public static void calculateNumbers() {
 
         int randomNumber1;
         int randomNumber2;

@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    public static void tryToGuessEven() {
+    public static void calculateEven() {
         int randomNumber;
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int roundNumber = 1000;

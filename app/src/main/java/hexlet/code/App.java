@@ -23,19 +23,19 @@ public class App {
                 Cli.meeting();
                 break;
             case even:
-                Even.tryToGuessEven();
+                Even.calculateEven();
                 break;
             case calc:
-                Calculator.tryToCalculateNumbers();
+                Calculator.calculateNumbers();
                 break;
             case gcd:
-                Gcd.tryToCalculateDivisor();
+                Gcd.calculateDivisor();
                 break;
             case progression:
-                Progression.tryToGuessNumberFromProgression();
+                Progression.calculateNumberFromProgression();
                 break;
             case prime:
-                Prime.tryToGuessPrime();
+                Prime.calculatePrime();
                 break;
             default:
             case 0:

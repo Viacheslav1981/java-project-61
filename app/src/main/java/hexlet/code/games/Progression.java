@@ -37,7 +37,7 @@ public class Progression {
 
     }
 
-    public static void tryToGuessNumberFromProgression() {
+    public static void calculateNumberFromProgression() {
 
         String rules = "What number is missing in the progression?";
 

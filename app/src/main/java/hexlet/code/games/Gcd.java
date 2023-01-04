@@ -30,7 +30,7 @@ public class Gcd {
         return correctAnswer;
     }
 
-    public static void tryToCalculateDivisor() {
+    public static void calculateDivisor() {
 
         int randomNumber1;
         int randomNumber2;
