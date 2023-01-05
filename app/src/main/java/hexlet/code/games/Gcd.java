@@ -4,28 +4,19 @@ import hexlet.code.Engine;
 
 public class Gcd {
 
-    public static String greatDivisor(int randomNumber1, int randomNumber2) {
+    private static String greatDivisor(int randomNumber1, int randomNumber2) {
         String correctAnswer = "";
-        int divisors;
 
-        if (randomNumber1 > randomNumber2) {
-            divisors = randomNumber2;
-        } else {
-            divisors = randomNumber1;
-        }
-
-        for (int i = 1; i <= divisors; i++) {
+        for (int i = 1; i <= Math.max(randomNumber1, randomNumber2); i++) {
             if ((randomNumber1 % i == 0) && (randomNumber2 % i == 0)) {
                 correctAnswer = String.valueOf(i);
             }
-        }
-
-        if (randomNumber1 == 0) {
-            correctAnswer = String.valueOf(randomNumber2);
-        }
-
-        if (randomNumber2 == 0) {
-            correctAnswer = String.valueOf(randomNumber1);
+            if (randomNumber1 == 0) {
+                return String.valueOf(randomNumber2);
+            }
+            if (randomNumber2 == 0) {
+                return String.valueOf(randomNumber1);
+            }
         }
         return correctAnswer;
     }

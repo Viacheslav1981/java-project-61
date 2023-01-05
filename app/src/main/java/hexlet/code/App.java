@@ -9,14 +9,14 @@ import hexlet.code.games.Even;
 import java.util.Scanner;
 
 public class App {
+    public static final int greet = 1;
+    public static final int even = 2;
+    public static final int calc = 3;
+    public static final int gcd = 4;
+    public static final int progression = 5;
+    public static final int prime = 6;
 
     public static void chooseGame(int choice) {
-        final int greet = 1;
-        final int even = 2;
-        final int calc = 3;
-        final int gcd = 4;
-        final int progression = 5;
-        final int prime = 6;
 
         switch (choice) {
             case greet:
