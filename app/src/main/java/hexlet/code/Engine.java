@@ -15,7 +15,7 @@ public class Engine {
         String userAnswer;
 
         while (questionNumber < numberOfNeedRounds) {
-            System.out.println(questionsAndAnswers[questionNumber][0]);
+            System.out.println("Question: " + questionsAndAnswers[questionNumber][0]);
             userAnswer = scanner.next();
             System.out.println("Your answer: " + userAnswer);
 
@@ -68,7 +68,7 @@ public class Engine {
 
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             randomNumber = (int) (Math.random() * roundNumber);
-            String question = "Question: " + randomNumber;
+            String question = Integer.toString(randomNumber);
             questionsAndAnswers[i][0] = question;
 
             if ((primeOrEven.equals("even") && (Engine.isEven(randomNumber)))

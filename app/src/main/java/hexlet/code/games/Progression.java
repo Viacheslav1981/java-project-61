@@ -49,7 +49,7 @@ public class Progression {
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             int[] progression = getProgression();
 
-            String question = "Question: ";
+            String question = "";
             int guessNumber = new Random().nextInt(0, progression.length);
             for (int j = 0; j < progression.length; j++) {
                 if (j == guessNumber) {

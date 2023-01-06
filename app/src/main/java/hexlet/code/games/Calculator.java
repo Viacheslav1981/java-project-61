@@ -50,7 +50,7 @@ public class Calculator {
             randomNumber2 = (int) (Math.random() * roundNumber);
 
             int numberOfOperation = new Random().nextInt(operators.length);
-            String question = "Question: " + randomNumber1 + " "
+            String question = randomNumber1 + " "
                     + operators[numberOfOperation] + " " + randomNumber2;
 
             questionsAndAnswers[i][0] = question;

@@ -36,7 +36,7 @@ public class Gcd {
         for (int i = 0; i < questionsAndAnswers.length; i++) {
             randomNumber1 = (int) (Math.random() * roundNumber);
             randomNumber2 = (int) (Math.random() * roundNumber);
-            String question = "Question: " + randomNumber1 + " " + randomNumber2;
+            String question = randomNumber1 + " " + randomNumber2;
 
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = greatDivisor(randomNumber1, randomNumber2);
