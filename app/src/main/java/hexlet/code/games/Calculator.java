@@ -23,7 +23,6 @@ public class Calculator {
                 correctAnswer = String.valueOf(randomNumber1 * randomNumber2);
                 break;
             default:
-            case ' ':
                 break;
         }
         return correctAnswer;

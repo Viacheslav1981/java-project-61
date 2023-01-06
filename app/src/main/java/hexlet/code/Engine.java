@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static String userName = "";
-
     public static void commonLogicForGames(String rules, String[][] questionsAndAnswers) {
+        String userName ;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -31,14 +30,13 @@ public class Engine {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
             questionNumber++;
         }
 
-        if (questionNumber == numberOfNeedRounds) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        System.out.println("Congratulations, " + userName + "!");
+
 
     }
 
