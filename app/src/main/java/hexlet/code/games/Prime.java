@@ -8,11 +8,9 @@ public class Prime {
 
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        final int roundNumber = 100;
         final int strings = 3;
         final int columns = 2;
 
-        int randomNumber;
         final String forAnswer = "prime";
 
         String[][] questionsAndAnswers = new String[strings][columns];
