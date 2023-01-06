@@ -8,7 +8,11 @@ public class Engine {
 
     public static void commonLogicForGames(String rules, String[][] questionsAndAnswers) {
         Scanner scanner = new Scanner(System.in);
-        helloAndRules(rules);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(rules);
 
         int questionNumber = 0;
         final int numberOfNeedRounds = 3;
@@ -36,48 +40,6 @@ public class Engine {
             System.out.println("Congratulations, " + userName + "!");
         }
 
-    }
-
-    public static void helloAndRules(String rules) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println(rules);
-    }
-
-    public static boolean isEven(int number) {
-        return number % 2 == 0;
-    }
-
-    public static boolean isPrime(int randomNumber) {
-        int countDivisors = 0;
-
-        for (int i = 2; i < randomNumber; i++) {
-            if (randomNumber % i == 0) {
-                countDivisors++;
-            }
-        }
-        return (countDivisors == 0);
-    }
-
-    public static void setYesOrNoAnswers(String[][] questionsAndAnswers, String primeOrEven) {
-        int randomNumber;
-        final int roundNumber = 100;
-
-        for (int i = 0; i < questionsAndAnswers.length; i++) {
-            randomNumber = (int) (Math.random() * roundNumber);
-            String question = Integer.toString(randomNumber);
-            questionsAndAnswers[i][0] = question;
-
-            if ((primeOrEven.equals("even") && (Engine.isEven(randomNumber)))
-                    || (primeOrEven.equals("prime") && (Engine.isPrime(randomNumber)))) {
-                questionsAndAnswers[i][1] = "yes";
-            } else {
-                questionsAndAnswers[i][1] = "no";
-            }
-        }
     }
 
 }

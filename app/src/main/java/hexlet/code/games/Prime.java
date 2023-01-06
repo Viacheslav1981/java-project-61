@@ -11,12 +11,35 @@ public class Prime {
         final int strings = 3;
         final int columns = 2;
 
-        final String forAnswer = "prime";
+        int randomNumber;
+        final int roundNumber = 100;
 
         String[][] questionsAndAnswers = new String[strings][columns];
 
-        Engine.setYesOrNoAnswers(questionsAndAnswers, forAnswer);
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            randomNumber = (int) (Math.random() * roundNumber);
+            String question = Integer.toString(randomNumber);
+            questionsAndAnswers[i][0] = question;
+
+            if (((isPrime(randomNumber)))) {
+                questionsAndAnswers[i][1] = "yes";
+            } else {
+                questionsAndAnswers[i][1] = "no";
+            }
+        }
+
         Engine.commonLogicForGames(rules, questionsAndAnswers);
+    }
+
+    public static boolean isPrime(int randomNumber) {
+        int countDivisors = 0;
+
+        for (int i = 2; i < randomNumber; i++) {
+            if (randomNumber % i == 0) {
+                countDivisors++;
+            }
+        }
+        return (countDivisors == 0);
     }
 }
 
