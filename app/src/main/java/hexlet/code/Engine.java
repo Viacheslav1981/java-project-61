@@ -12,7 +12,6 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
-
         int questionNumber = 0;
         final int numberOfNeedRounds = 3;
         String userAnswer;
@@ -21,7 +20,6 @@ public class Engine {
             System.out.println("Question: " + questionsAndAnswers[questionNumber][0]);
             userAnswer = scanner.next();
             System.out.println("Your answer: " + userAnswer);
-
             String correctAnswer = questionsAndAnswers[questionNumber][1];
 
             if (userAnswer.equals(correctAnswer)) {
@@ -34,11 +32,7 @@ public class Engine {
             }
             questionNumber++;
         }
-
         System.out.println("Congratulations, " + userName + "!");
-
-
     }
-
 }
 

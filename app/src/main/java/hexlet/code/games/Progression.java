@@ -19,24 +19,17 @@ public class Progression {
             }
         }
         return progression;
-
     }
 
     public static void calculateNumberFromProgression() {
-
         int firstElement;
         int stepProgression;
         int lengthProgression;
-
         final int roundNumber = 100;
         final int progressionRange1 = 5;
         final int progressionRange2 = 11;
-
         final int progressionStepRange = 20;
-
-
         String rules = "What number is missing in the progression?";
-
         final int strings = 3;
         final int columns = 2;
 
@@ -62,11 +55,8 @@ public class Progression {
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = String.valueOf(progression[guessNumber]);
         }
-
         Engine.commonLogicForGames(rules, questionsAndAnswers);
-
     }
-
 }
 
 
