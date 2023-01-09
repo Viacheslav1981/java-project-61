@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     public static void commonLogicForGames(String rules, String[][] questionsAndAnswers) {
-        String userName ;
+        String userName;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");

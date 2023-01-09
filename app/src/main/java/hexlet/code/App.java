@@ -9,32 +9,32 @@ import hexlet.code.games.Even;
 import java.util.Scanner;
 
 public class App {
-    public static final int greet = 1;
-    public static final int even = 2;
-    public static final int calc = 3;
-    public static final int gcd = 4;
-    public static final int progression = 5;
-    public static final int prime = 6;
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int GCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
 
     public static void chooseGame(int choice) {
 
         switch (choice) {
-            case greet:
+            case GREET:
                 Cli.meeting();
                 break;
-            case even:
+            case EVEN:
                 Even.calculateEven();
                 break;
-            case calc:
+            case CALC:
                 Calculator.calculateNumbers();
                 break;
-            case gcd:
+            case GCD:
                 Gcd.calculateDivisor();
                 break;
-            case progression:
+            case PROGRESSION:
                 Progression.calculateNumberFromProgression();
                 break;
-            case prime:
+            case PRIME:
                 Prime.calculatePrime();
                 break;
             default:
