@@ -8,11 +8,12 @@ public class Gcd {
         String correctAnswer = "";
         int maxNumber = Math.max(randomNumber1, randomNumber2);
 
+        if ((randomNumber1 == 0) || (randomNumber2 == 0)) {
+            return String.valueOf(maxNumber);
+        }
+
         for (int i = 1; i < maxNumber; i++) {
             if ((randomNumber1 % i == 0) && (randomNumber2 % i == 0)) {
-                if ((randomNumber1 == 0) || (randomNumber2 == 0)) {
-                    return String.valueOf(maxNumber);
-                }
                 correctAnswer = String.valueOf(i);
             }
         }
