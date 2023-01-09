@@ -41,7 +41,7 @@ public class Prime {
                 countDivisors++;
             }
         }
-        return (countDivisors == 0);
+        return countDivisors <= 1;
     }
 }
 
