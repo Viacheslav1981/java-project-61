@@ -7,28 +7,13 @@ import java.util.Random;
 public class Progression {
 
 
-    public static int[] getProgression() {
-        int startProgression = 0;
-        int stepProgression = 0;
-        int lengthProgression = 0;
-
-        final int roundNumber1 = 10;
-        final int roundNumber2 = 100;
-        final int progressionRange1 = 5;
-        final int progressionRange2 = 11;
-
-        final int progressionStepRange = 20;
-
-        lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
-        startProgression = (int) (Math.random() * roundNumber1);
+    public static int[] getProgression(int firstElement, int stepProgression, int lengthProgression) {
 
         int[] progression = new int[lengthProgression];
-        startProgression = (int) (Math.random() * roundNumber2);
-        stepProgression = new Random().nextInt(1, progressionStepRange);
 
         for (int i = 0; i < lengthProgression; i++) {
             if (i == 0) {
-                progression[0] = startProgression;
+                progression[0] = firstElement;
             } else {
                 progression[i] = progression[i - 1] + stepProgression;
             }
@@ -39,6 +24,17 @@ public class Progression {
 
     public static void calculateNumberFromProgression() {
 
+        int firstElement;
+        int stepProgression;
+        int lengthProgression;
+
+        final int roundNumber = 100;
+        final int progressionRange1 = 5;
+        final int progressionRange2 = 11;
+
+        final int progressionStepRange = 20;
+
+
         String rules = "What number is missing in the progression?";
 
         final int strings = 3;
@@ -47,7 +43,11 @@ public class Progression {
         String[][] questionsAndAnswers = new String[strings][columns];
 
         for (int i = 0; i < questionsAndAnswers.length; i++) {
-            int[] progression = getProgression();
+            lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
+            firstElement = (int) (Math.random() * roundNumber);
+            stepProgression = new Random().nextInt(1, progressionStepRange);
+
+            int[] progression = getProgression(firstElement, stepProgression, lengthProgression);
 
             String question = "";
             int guessNumber = new Random().nextInt(0, progression.length);
