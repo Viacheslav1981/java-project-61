@@ -6,17 +6,16 @@ public class Gcd {
 
     private static String greatDivisor(int randomNumber1, int randomNumber2) {
         String correctAnswer = "";
+        int maxNumber = Math.max(randomNumber1, randomNumber2);
 
-        for (int i = 1; i <= Math.max(randomNumber1, randomNumber2); i++) {
+        for (int i = 1; i < maxNumber; i++) {
             if ((randomNumber1 % i == 0) && (randomNumber2 % i == 0)) {
                 correctAnswer = String.valueOf(i);
             }
-            if (randomNumber1 == 0) {
-                return String.valueOf(randomNumber2);
+            if ((randomNumber1 == 0) || (randomNumber2 == 0)) {
+                return String.valueOf(maxNumber);
             }
-            if (randomNumber2 == 0) {
-                return String.valueOf(randomNumber1);
-            }
+
         }
         return correctAnswer;
     }
