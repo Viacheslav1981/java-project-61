@@ -8,7 +8,7 @@ public class Gcd {
         String correctAnswer = "";
         int maxNumber = Math.max(randomNumber1, randomNumber2);
 
-        if ((randomNumber1 == 0) || (randomNumber2 == 0)) {
+        if (Math.min(randomNumber1, randomNumber2) == 0) {
             return String.valueOf(maxNumber);
         }
 
