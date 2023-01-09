@@ -33,8 +33,10 @@ public class Prime {
 
     public static boolean isPrime(int randomNumber) {
         int countDivisors = 0;
-
-        for (int i = 2; i < randomNumber; i++) {
+        if (randomNumber == 1) {
+            return false;
+        }
+        for (int i = 1; i < randomNumber; i++) {
             if (randomNumber % i == 0) {
                 countDivisors++;
             }
