@@ -15,7 +15,6 @@ public class Gcd {
             if ((randomNumber1 == 0) || (randomNumber2 == 0)) {
                 return String.valueOf(maxNumber);
             }
-
         }
         return correctAnswer;
     }
@@ -41,9 +40,7 @@ public class Gcd {
             questionsAndAnswers[i][1] = greatDivisor(randomNumber1, randomNumber2);
 
         }
-
         Engine.commonLogicForGames(rules, questionsAndAnswers);
-
     }
 }
 

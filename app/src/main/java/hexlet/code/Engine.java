@@ -14,11 +14,10 @@ public class Engine {
         System.out.println(rules);
         int questionNumber = 0;
         final int numberOfNeedRounds = 3;
-        String userAnswer;
 
         while (questionNumber < numberOfNeedRounds) {
             System.out.println("Question: " + questionsAndAnswers[questionNumber][0]);
-            userAnswer = scanner.next();
+            String userAnswer = scanner.next();
             System.out.println("Your answer: " + userAnswer);
             String correctAnswer = questionsAndAnswers[questionNumber][1];
 
