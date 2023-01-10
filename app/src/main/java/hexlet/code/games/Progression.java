@@ -22,9 +22,6 @@ public class Progression {
     }
 
     public static void calculateNumberFromProgression() {
-        int firstElement;
-        int stepProgression;
-        int lengthProgression;
         final int roundNumber = 100;
         final int progressionRange1 = 5;
         final int progressionRange2 = 11;
@@ -34,11 +31,10 @@ public class Progression {
         final int columns = 2;
 
         String[][] questionsAndAnswers = new String[strings][columns];
-
         for (int i = 0; i < questionsAndAnswers.length; i++) {
-            lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
-            firstElement = (int) (Math.random() * roundNumber);
-            stepProgression = new Random().nextInt(1, progressionStepRange);
+            int lengthProgression = new Random().nextInt(progressionRange1, progressionRange2);
+            int firstElement = (int) (Math.random() * roundNumber);
+            int stepProgression = new Random().nextInt(1, progressionStepRange);
 
             int[] progression = getProgression(firstElement, stepProgression, lengthProgression);
 
