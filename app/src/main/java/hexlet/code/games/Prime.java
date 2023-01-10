@@ -10,7 +10,6 @@ public class Prime {
 
         final int strings = 3;
         final int columns = 2;
-
         int randomNumber;
         final int roundNumber = 100;
 
