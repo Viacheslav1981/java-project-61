@@ -48,7 +48,7 @@ public class Progression {
                 if (j == guessNumber) {
                     question.append(".." + " ");
                 } else {
-                    question.append(progression[j] + " ");
+                    question.append(progression[j]).append(" ");
                 }
             }
             questionsAndAnswers[i][0] = question.toString();
