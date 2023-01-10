@@ -42,17 +42,16 @@ public class Progression {
 
             int[] progression = getProgression(firstElement, stepProgression, lengthProgression);
 
-            String question = "";
+            StringBuilder question = new StringBuilder();
             int guessNumber = new Random().nextInt(0, progression.length);
             for (int j = 0; j < progression.length; j++) {
                 if (j == guessNumber) {
-                    question = question + "..";
+                    question.append(".." + " ");
                 } else {
-                    question = question + progression[j];
+                    question.append(progression[j] + " ");
                 }
-                question = question + " ";
             }
-            questionsAndAnswers[i][0] = question;
+            questionsAndAnswers[i][0] = question.toString();
             questionsAndAnswers[i][1] = String.valueOf(progression[guessNumber]);
         }
         Engine.commonLogicForGames(rules, questionsAndAnswers);
